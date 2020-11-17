@@ -1,0 +1,13 @@
+<ul class="collection">
+{{#each .}}
+    <li class="collection-item avatar">
+        <img src="{{avatarUrl}}" alt="" class="circle">
+        <span class="title"> {{name}} </span>
+        <p> @{{screenName}} </p>
+        <span class="secondary-content">
+            <input type="checkbox" id="{{screenName}}" name="selectedFollowerScreenNames" value="{{screenName}}">
+            <label for="{{screenName}}"> </label>
+        </span>
+    </li> 
+{{/each}}
+</ul>

@@ -1,0 +1,31 @@
+extends ./layout/main
+
+block content
+    .container
+        section(style='margin-top: 20px')
+            .row.center-align
+                h5(style='font-weight: 200')
+                    .col.s4
+                        strong Followers
+                    .col.s4
+                        | Selected followers
+                    .col.s4
+                        | Graph
+            .divider
+        .row(style='margin-top: 20px')
+            #preloader-container.col.s2.offset-s5
+            if (error) 
+                .row
+                    .col.s8.offset-s2
+                        .card-panel.red.center-align.darken-1
+                            span.white-text You must selected at least one follower!
+            form.col.s8.offset-s2(method='post', action='/followers')
+                .row#follower-list-container
+                .row
+                    .col.s12.right-align
+                        button.btn-floating.btn-large.waves-effect.waves-light.blue(type='submit')
+                            i.mdi-action-done
+    include ./modal/partial-follower-list
+    include ./modal/twitter-error
+block javascriptFooter
+    script(src='/js/followers.js')  

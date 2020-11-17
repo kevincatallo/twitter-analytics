@@ -1,0 +1,14 @@
+extends ./layout/main
+
+block title
+    title Welcome 
+
+block content
+    .container
+        .row
+            .col.s12.center-align
+                h1 Twitter Analytics
+            .col.s12.center-align
+                img.responsive-img(src='/images/polimi.png')
+            .col.s12.center-align
+                a.waves-effect.waves-light.btn-large.blue(href='/auth/twitter') Sign in with Twitter

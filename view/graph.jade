@@ -1,0 +1,25 @@
+extends ./layout/main
+
+block title
+    title Graph 
+
+block content
+    .container
+        section(style='margin-top: 20px')
+            .row.center-align
+                h5(style='font-weight: 200')
+                    .col.s4
+                        a(href='/followers') Followers
+                    .col.s4
+                        a(href='/selected-followers') Selected followers
+                    .col.s4
+                        strong Graph
+            .divider
+        .row(style='margin-top: 50px')
+            #preloader-container.col.s2.offset-s5
+            #centrality-modal-container
+            #graph-container(style='height: 800px;')
+    include ./modal/partial-follower-list
+    include ./modal/twitter-error
+block javascriptFooter
+    script(src='/js/graph.js')

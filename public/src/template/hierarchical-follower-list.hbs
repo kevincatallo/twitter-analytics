@@ -1,0 +1,17 @@
+<ul class="collapsible" id="collapsible">
+{{#each .}}
+    <li>
+        <div class="collapsible-header"> {{name}}</div>
+        <div class="collapsible-body">
+            <ul class="collection">
+                {{#each followers}}
+                    <li class="collection-item avatar">
+                        <img src="{{avatarUrl}}" alt="" class='circle'>
+                        <span class="title"> {{name}} </span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </li>
+{{/each}}    
+</ul>

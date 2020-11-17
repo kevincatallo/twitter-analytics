@@ -1,0 +1,18 @@
+extends ./layout/main
+
+block title
+        title My profile
+
+block content
+    .container
+        h4 My profile
+        hr
+        .row.valign-wrapper
+            .col.s2.center-align
+                img.responsive-img.circle(src=user.avatarUrl)
+            .col.s10
+                ul
+                    li <strong> Name :</strong> #{user.name}
+                    li <strong> Screen name:</strong> @#{user.screenName}
+                    li <strong> Location:</strong> #{location ? location : 'Unknown'}
+                a.btn.blue(href='/followers') Fetch followers
